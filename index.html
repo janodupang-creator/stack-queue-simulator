@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Stack Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="eyebrow">DATA STRUCTURE LAB · WEEK 12</div>
+      <h1>Stack Simulator</h1>
+      <p>Explore <strong>Last In, First Out</strong>: the newest value sits on top and leaves first.</p>
+    </header>
+
+    <section class="controls card" aria-labelledby="controls-title">
+      <h2 id="controls-title">Add a value</h2>
+      <form id="value-form" class="entry-row">
+        <label class="sr-only" for="value-input">Value to push</label>
+        <input id="value-input" name="value" type="text" maxlength="40" placeholder="Type a value" autocomplete="off">
+        <button class="button button-primary" type="submit">Push</button>
+      </form>
+      <div class="actions" aria-label="Stack actions">
+        <button class="button button-secondary" id="pop-button" type="button">Pop top</button>
+        <button class="button button-secondary" id="peek-button" type="button">Peek top</button>
+        <button class="button button-quiet" id="clear-button" type="button">Clear stack</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Ready. Push a value to begin.</p>
+    </section>
+
+    <section class="workspace" aria-label="Stack display">
+      <div class="card structure-card">
+        <div class="section-heading">
+          <div><div class="eyebrow">LIFO ORDER</div><h2>Your stack</h2></div>
+          <span class="count" id="count">0 items</span>
+        </div>
+        <div class="edge-label edge-label-top">TOP</div>
+        <ol class="stack-list" id="stack-list" aria-label="Stack values, top to bottom"></ol>
+        <div class="empty-state" id="empty-state">Your stack is empty.<br><span>Push a value to add the first block.</span></div>
+        <div class="edge-label edge-label-bottom">BOTTOM</div>
+      </div>
+      <aside class="card deleted-card" aria-labelledby="deleted-title">
+        <div class="eyebrow">REMOVED VALUE</div>
+        <h2 id="deleted-title">Deleted area</h2>
+        <div id="deleted-value" class="deleted-value">—</div>
+        <p>The most recently popped value appears here.</p>
+      </aside>
+    </section>
+    <footer>Stack operations: Push · Pop · Peek · Clear</footer>
+  </main>
+</body>
+</html>
